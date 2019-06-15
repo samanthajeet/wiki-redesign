@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import Search from './Components/Search'
+import routes from './routes'
 
 function App() {
   return (
     <div className="App">
-      Wikipedia - but nice to look at
-      <Search />
+      {routes}
     </div>
   );
 }
