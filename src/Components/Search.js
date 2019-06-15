@@ -19,11 +19,15 @@ class Search extends Component {
 
    }
 
+   goToPage(pageid){
+    this.props.history.push(`/page/${pageid}`)
+   }
+
   render() { 
     let  {searchResults } = this.state
     let mappedResults = searchResults.map( (result) => {
       return (
-        <div key={result.pageid} >
+        <div key={result.pageid} onClick={() => this.goToPage(result.pageid)} >
           <h2>{result.title}</h2>
         </div>
       )
