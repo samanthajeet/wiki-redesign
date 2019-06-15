@@ -6,7 +6,7 @@ import Page from './Components/Page';
 
 export default (
   <Switch>
-    <Route path='/page/:pageid' component={Page} />
+    <Route path='/page/:pagetitle' component={Page} />
     <Route path='/' component={Search} />
   </Switch>
 )

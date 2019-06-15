@@ -6,7 +6,7 @@ const Page = props => {
 
   return(
     <>
-    <p>{props.match.params.pageid}</p>
+    <p>{props.match.params.pagetitle}</p>
     </>
   )
 }

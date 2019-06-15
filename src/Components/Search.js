@@ -13,21 +13,21 @@ class Search extends Component {
 
    handleSearch = async() => {
     let searchTerm = this.state.userSearchInput
-    let response = await axios.get(`http://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&origin=*&srsearch=${searchTerm}`)
+    let response = await axios.get(`http://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&origin=*&prop=extracts&srsearch=${searchTerm}`)
     console.log(response.data.query.search)
     this.setState({ searchResults:response.data.query.search })
 
    }
 
-   goToPage(pageid){
-    this.props.history.push(`/page/${pageid}`)
+   goToPage(title){
+    this.props.history.push(`/page/${title}`)
    }
 
   render() { 
     let  {searchResults } = this.state
     let mappedResults = searchResults.map( (result) => {
       return (
-        <div key={result.pageid} onClick={() => this.goToPage(result.pageid)} >
+        <div key={result.pageid} onClick={() => this.goToPage(result.title)} >
           <h2>{result.title}</h2>
         </div>
       )
